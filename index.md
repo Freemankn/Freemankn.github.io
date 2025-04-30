@@ -5,13 +5,21 @@ title: Home
 
 # Welcome to My Site
 
-This is my homepage. You can add more content here!
+This is my homepage.
 
 ## About Me
 
-I am a passionate coder who loves learning new things every day.
+I am a passionate coder and mathematican who loves learning new things every day.
+
+## Hometown
+
+Denver, Colorado
+
+## Major
+
+Computer Science and Applied Math
 
 ## My Projects
 
-- Project 1: A fun project I worked on.
+- Project 1: Algorithm Visualizer.
 - Project 2: Another cool project!
