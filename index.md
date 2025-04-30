@@ -29,5 +29,3 @@ Here is a cool video I want to share:
   <source src="videos/Algorithm_Visual.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
-- Project 2: Another cool project!
