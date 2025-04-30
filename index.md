@@ -7,6 +7,10 @@ title: Home
 
 This is my homepage.
 
+## Name
+
+Freeman Nkouka
+
 ## About Me
 
 I am a passionate coder and mathematican who loves learning new things every day.
