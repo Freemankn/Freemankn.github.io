@@ -22,4 +22,12 @@ Computer Science and Applied Math
 ## My Projects
 
 - Project 1: Algorithm Visualizer.
+
+Here is a cool video I want to share:
+<video width="640" height="360" controls>
+
+  <source src="videos/your-video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 - Project 2: Another cool project!
