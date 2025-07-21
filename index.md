@@ -34,7 +34,9 @@ Here is a cool video I want to share:
   Your browser does not support the video tag.
 </video>
 
-- Project 2: Task Manager(Backend. Frontend will be built soon).
+- Project 2: Task Manager (This is the backend. Frontend with UI will be built soon).
+
+Demo video:
 <video width="640" height="360" controls>
 
   <source src="videos/videos/Task_Manager_Backend.mp4" type="video/mp4">
