@@ -1,3 +1,24 @@
 body{
     background-color: lightblue;
 }
+
+header,
+      footer {
+        background-color: cornflowerblue ;
+        padding: 20px;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgb(39, 6, 100);
+        font-family: 'Poppins';
+      }
+      footer p {
+        margin: 5px 0;
+      }
+
+      footer a {
+        color: #333;
+        text-decoration: none;
+      }
+
+p{
+    font-family: 'Inter', sans-serif;
+}
