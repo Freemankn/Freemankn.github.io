@@ -2,6 +2,17 @@ body{
     background-color: lightblue;
 }
 
+.about-container p{
+  max-width: 700px;         /* Keeps it readable */
+  margin: 0 auto;           /* Centers horizontally */
+  padding: 20px;           /* Adds breathing room */
+  line-height: 1.6;         /* Good paragraph spacing */
+  text-align: left;
+  border-radius: 8px;       /*Optional rounded edges */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Optional soft shadow */
+}
+
+
 header,
       footer {
         background-color: cornflowerblue ;
@@ -30,5 +41,5 @@ main h3{
 }
 
 hr{
-     border: 1px solid rgba(10, 111, 228, 0.856); /* Sets a 1px solid red border */
+     border: 1px solid rgba(10, 111, 228, 0.856);
 }
