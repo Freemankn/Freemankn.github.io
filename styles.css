@@ -7,7 +7,7 @@ header,
         background-color: cornflowerblue ;
         padding: 20px;
         text-align: center;
-        text-shadow: 2px 2px 5px rgb(39, 6, 100);
+        text-shadow: 2px 2px 5px rgb(95, 36, 204);
         font-family: 'Poppins';
       }
       footer p {
@@ -21,4 +21,14 @@ header,
 
 p{
     font-family: 'Inter', sans-serif;
+}
+
+
+main h3{
+    font-size: 22px;
+    text-align: center;
+}
+
+hr{
+     border: 1px solid rgba(10, 111, 228, 0.856); /* Sets a 1px solid red border */
 }
