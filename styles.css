@@ -24,30 +24,31 @@ header h1{
 }
 
 
-
-
-header,
-      footer {
+header,footer {
         background-color: cornflowerblue ;
         padding: 20px;
         text-align: center;
         text-shadow: 2px 2px 5px rgb(36, 198, 204);
         font-family: 'Poppins';
       }
+
+header nav{
+  font-size: 38px;
+}
       
-      footer p {
-        margin: 5px 0;
-        font-size: 40px;
-      }
+footer p {
+  margin: 5px 0;
+  font-size: 40px;
+}
 
-      footer h2{
-        font-size: 40px;
-      }
+footer h2{
+  font-size: 40px;
+}
 
-      footer a {
-        color: #333;
-        text-decoration: none;
-      }
+footer a {
+  color: #333;
+  text-decoration: none;
+}
 
 p{
     font-family: 'Inter', sans-serif;
