@@ -24,6 +24,8 @@ header h1{
 }
 
 
+
+
 header,
       footer {
         background-color: cornflowerblue ;
@@ -57,6 +59,10 @@ p{
 main h3{
     font-size: 40px;
     text-align: center;
+}
+
+ul.projects{
+  font-size: 40px;
 }
 
 hr{
