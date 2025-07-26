@@ -1,5 +1,12 @@
 body{
     background-color: lightblue;
+    color: Navy ;
+}
+
+.container{
+  max-width: 1000px;      /* You can adjust this (e.g. 800px, 960px, etc.) */
+  margin: 0 auto;         /* Horizontally center the container */
+  padding: 0 20px;        /* Optional: add side padding for breathing room */
 }
 
 .about-container p{
@@ -8,8 +15,12 @@ body{
   padding: 20px;           /* Adds breathing room */
   line-height: 1.6;         /* Good paragraph spacing */
   text-align: left;
-  border-radius: 8px;       /*Optional rounded edges */
+  border-radius: 8px;       /*Optional rounded edges 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Optional soft shadow */
+}
+
+header h1{
+  font-size: 55px;
 }
 
 
@@ -18,11 +29,17 @@ header,
         background-color: cornflowerblue ;
         padding: 20px;
         text-align: center;
-        text-shadow: 2px 2px 5px rgb(95, 36, 204);
+        text-shadow: 2px 2px 5px rgb(36, 198, 204);
         font-family: 'Poppins';
       }
+      
       footer p {
         margin: 5px 0;
+        font-size: 40px;
+      }
+
+      footer h2{
+        font-size: 40px;
       }
 
       footer a {
@@ -32,11 +49,13 @@ header,
 
 p{
     font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    color: Navy ;
 }
 
 
 main h3{
-    font-size: 22px;
+    font-size: 40px;
     text-align: center;
 }
 
