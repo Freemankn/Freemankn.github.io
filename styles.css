@@ -15,7 +15,8 @@ body{
   padding: 20px;           /* Adds breathing room */
   line-height: 1.6;         /* Good paragraph spacing */
   text-align: left;
-  border-radius: 8px;       /*Optional rounded edges 
+  border-radius: 10px;       /*Optional rounded edges */
+  border-color: solid black;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Optional soft shadow */
 }
 
