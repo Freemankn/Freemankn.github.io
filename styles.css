@@ -1,49 +1,132 @@
-body{
-    background-color: lightblue;
-    color: Navy ;
+/* === Global Styles === */
+
+body {
+  background-color: cornflowerblue;
+  color: Navy;
 }
 
-.container{
-  max-width: 1000px;      /* You can adjust this (e.g. 800px, 960px, etc.) */
-  margin: 0 auto;         /* Horizontally center the container */
-  padding: 0 20px;        /* Optional: add side padding for breathing room */
+/* Reset margin/padding and set box model for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.about-container p{
-  max-width: 700px;         /* Keeps it readable */
-  margin: 0 auto;           /* Centers horizontally */
-  padding: 20px;           /* Adds breathing room */
-  line-height: 1.6;         /* Good paragraph spacing */
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* === Layout Container === */
+
+.container {
+  width: 100%;
+  max-width: 1000px; /* Constrains width for readability */
+  margin: 0 auto;       /* Centers content horizontally */
+  padding: 0 1rem;       /* Adds side padding */
+}
+
+/* === About Section Flex Layout === */
+
+.about-section-wrapper {
+  margin-top: 50px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #4f57b7; /* Example background */
+  padding: 50px 0;
+}
+
+
+.about-container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.about-container-flex img {
+  max-width: 350px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgb(148, 148, 239);
+}
+
+.about-text h3 {
+  color: rgb(7, 21, 89);
+}
+
+.about-background {
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* === Paragraph Styling === */
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(16px, 2vw, 20px);  /* Responsive text sizing */
+  line-height: 1.6;
+  color: Navy;
   text-align: left;
-  border-radius: 10px;       /*Optional rounded edges */
-  border-color: solid black;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Optional soft shadow */
 }
 
-header h1{
+/* Centered and readable text block for About Me and others */
+/* .about-container p {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+} */
+
+/* === Header and Footer === */
+
+header, footer {
+  /* background-color: cornflowerblue; */
+  padding: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgb(36, 198, 204);
+  font-family: 'Poppins', sans-serif;
+}
+
+header h1 {
   font-size: 55px;
 }
 
-
-header,footer {
-        background-color: cornflowerblue ;
-        padding: 20px;
-        text-align: center;
-        text-shadow: 2px 2px 5px rgb(36, 198, 204);
-        font-family: 'Poppins';
-      }
-
-header nav{
+header nav {
   font-size: 38px;
 }
-      
-footer p {
-  margin: 5px 0;
+
+footer h2, footer p {
   font-size: 40px;
 }
 
-footer h2{
-  font-size: 40px;
+footer p {
+  margin: 5px 0;
 }
 
 footer a {
@@ -51,22 +134,53 @@ footer a {
   text-decoration: none;
 }
 
-p{
-    font-family: 'Inter', sans-serif;
-    font-size: 30px;
-    color: Navy ;
+/* === Section Headings === */
+
+main h3 {
+  font-size: 33px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* === Hometown Section Background === */
+
+
+.container-hometown-section {
+  padding-top: 20px;
+}
+
+.hometown-section {
+  width: 100vw;              /* Ensures full screen width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: rgb(86, 172, 237);
+}
+
+.hometown-section p{
+  position: relative;
+  text-align: left;
+  margin: 10px;
 }
 
 
-main h3{
-    font-size: 40px;
-    text-align: center;
+.hometown-background {
+  width: 100%;
+  padding: 40px 0;
 }
 
-ul.projects{
+
+/* === Projects List === */
+
+ul.projects {
   font-size: 40px;
 }
 
-hr{
-     border: 1px solid rgba(10, 111, 228, 0.856);
+/* === Optional HR Styling === */
+/*
+hr {
+  border: 1px solid rgba(10, 111, 228, 0.856);
 }
+*/
