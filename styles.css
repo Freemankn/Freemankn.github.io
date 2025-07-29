@@ -40,7 +40,7 @@ html, body {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: #4f57b7; /* Example background */
+  background-color: #4f57b7;
   padding: 50px 0;
 }
 
@@ -72,11 +72,10 @@ html, body {
 .about-text p {
   font-size: 18px;
   line-height: 1.6;
-  color: rgb(148, 148, 239);
 }
 
 .about-text h3 {
-  color: rgb(7, 21, 89);
+  color: Navy;
 }
 
 .about-background {
@@ -106,12 +105,12 @@ p {
 /* === Header and Footer === */
 
 header, footer {
-  /* background-color: cornflowerblue; */
   padding: 20px;
   text-align: center;
-  text-shadow: 2px 2px 5px rgb(36, 198, 204);
+  text-shadow: 2px 2px 5px rgb(172, 186, 245);
   font-family: 'Poppins', sans-serif;
 }
+
 
 header h1 {
   font-size: 55px;
@@ -126,13 +125,23 @@ footer h2, footer p {
 }
 
 footer p {
-  margin: 5px 0;
+  text-align: center;
 }
 
-footer a {
-  color: #333;
-  text-decoration: none;
+
+
+footer{
+  margin-top: 50px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #4f57b7;
+  padding: 50px 0;
 }
+
 
 /* === Section Headings === */
 
