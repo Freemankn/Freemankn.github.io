@@ -49,10 +49,74 @@ header{
   padding: 10px;
   background-color: #2F3233;
   border-radius: 15px;
+  box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.3); /*inner depth*/
 }
 
+.badge-slot {
+  position: relative;
+  height: 85px;
+  /* width: 50px; */
+}
+
+
+.badge-slot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+  filter: grayscale(100%) blur(1px);
+  z-index: 0;
+}
+
+
+.badge-slot img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+}
+
+.badge-python::before {
+  background-image: url("icons/python-icon.png");
+}
+.badge-js::before {
+  background-image: url("icons/js-icon.png");
+}
+
+.badge-css::before {
+  background-image: url("icons/css-icon.png");
+}
+
+.badge-c::before {
+  background-image: url("icons/c-icon.png");
+}
+.badge-R::before {
+  background-image: url("icons/R-icon.png");
+}
+
+.badge-ts::before {
+  background-image: url("icons/ts-icon.png");
+}
+
+.badge-html5::before {
+  background-image: url("icons/html5-icon.png");
+}
+.badge-matlab::before {
+  background-image: url("icons/matlab-icon.png");
+}
+
+.badge-java::before {
+  background-image: url("icons/java-icon.png");
+}
+
+
+
+
 #badge-container img {
-  height: 2.5rem;
+  height: 3.5rem;
 }
 
 @media (max-width: 768px) {
@@ -88,7 +152,7 @@ header{
 
 #badge-text {
   text-align: right;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 
