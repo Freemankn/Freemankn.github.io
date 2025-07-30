@@ -22,7 +22,6 @@ html, body {
 }
 
 /* === Layout Container === */
-
 .container {
   width: 100%;
   max-width: 1000px;
@@ -30,8 +29,7 @@ html, body {
   padding: 0 1rem;
 }
 
-/* === Languages Badges === */
-
+/* === Header & Badge Case === */
 header {
   display: flex;
   flex-wrap: wrap;
@@ -40,20 +38,34 @@ header {
   gap: 20px;
 }
 
+#badge-wrapper {
+  background-color: #4656ba;
+  border-radius: 25px;
+  padding: 10px;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+#badge-text {
+  text-align: right;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
 #badge-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 10px;
   background-image: url("/textures/InnerCase.png");
   background-size: cover;
   background-position: center;
   border-radius: 15px;
+  padding: 10px;
 }
 
 .badge-slot {
   position: relative;
-  height: 85px; /* ghost depth */
   flex: 0 0 auto;
 }
 
@@ -72,8 +84,8 @@ header {
 .badge-slot img {
   position: relative;
   z-index: 1;
-  width: 100%; /* fill slot */
-  height: 3.5rem; /* consistent height */
+  height: 3.5rem;
+  width: auto;
   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
 }
 
@@ -88,27 +100,12 @@ header {
 .badge-matlab::before  { background-image: url("icons/matlab-icon.png"); }
 .badge-java::before    { background-image: url("icons/java-icon.png"); }
 
-/* Hover effect */
+/* Hover effect on badges */
 #badge-container img:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5)) brightness(1.2);
   transition: all 0.2s ease;
   cursor: pointer;
-}
-
-#badge-wrapper {
-  position: relative;
-  background-color: #4656ba;
-  border-radius: 25px;
-  padding: 10px;
-  flex: 1;
-  max-width: 100%;
-}
-
-#badge-text {
-  text-align: right;
-  font-size: 20px;
-  margin-bottom: 8px;
 }
 
 /* === Mobile: horizontal scroll for badges === */
@@ -118,26 +115,32 @@ header {
     align-items: center;
   }
 
+  #badge-wrapper {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  #badge-text {
+    text-align: center;
+  }
+
   #badge-container {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Override mobile badge sizing to preserve aspect ratio */
+  .badge-slot {
+    /* allow slot height to shrink to image */
+  }
+
   .badge-slot img {
     height: 2.5rem;
     width: auto;
   }
-
-  /* Adjust slot height to fit smaller icons */
-  .badge-slot {
-    height: auto;
-  }
 }
 
 /* === About Section Flex Layout === */
-
 .about-section-wrapper {
   margin-top: 50px;
   width: 100vw;
@@ -174,11 +177,7 @@ header {
   max-width: 600px;
 }
 
-.about-text p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
+.about-text p { font-size: 18px; line-height: 1.6; }
 .about-text h3 { color: Navy; }
 
 p {
@@ -213,14 +212,9 @@ footer {
   padding: 50px 0;
 }
 
-main h3 {
-  font-size: 33px;
-  text-align: center;
-  margin-bottom: 10px;
-}
+main h3 { font-size: 33px; text-align: center; margin-bottom: 10px; }
 
 .container-hometown-section { padding-top: 20px; }
-
 .hometown-section {
   width: 100vw;
   position: relative;
@@ -232,7 +226,6 @@ main h3 {
 }
 
 .hometown-section p { position: relative; text-align: left; margin:10px; }
-
 .hometown-background { width:100%; padding:40px 0; }
 
 ul.projects { font-size:40px; }
