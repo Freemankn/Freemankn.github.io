@@ -18,36 +18,34 @@ html {
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
 /* === Layout Container === */
 
 .container {
   width: 100%;
-  max-width: 1000px; /* Constrains width for readability */
-  margin: 0 auto;       /* Centers content horizontally */
-  padding: 0 1rem;       /* Adds side padding */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* === Languages Badges ===  */
+/* === Languages Badges === */
 
-header{
+header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column;
-  align-items: center;
   gap: 20px;
 }
 
-#badge-container{
+#badge-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding: 10px;
-  background-image : url("/textures/InnerCase.png");
+  background-image: url("/textures/InnerCase.png");
   background-size: cover;
   background-position: center;
   border-radius: 15px;
@@ -55,10 +53,9 @@ header{
 
 .badge-slot {
   position: relative;
-  height: 85px;
-  /* width: 50px; */
+  height: 85px; /* restored for ghost depth */
+  flex: 0 0 auto;
 }
-
 
 .badge-slot::before {
   content: "";
@@ -72,75 +69,29 @@ header{
   z-index: 0;
 }
 
-
 .badge-slot img {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 3.5rem;
+  width: 100%; /* fill the slot */
+  height: 3.5rem; /* force consistent height */
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
 }
 
-.badge-python::before {
-  background-image: url("icons/python-icon.png");
-}
-.badge-js::before {
-  background-image: url("icons/js-icon.png");
-}
+/* Badge slot background images */
+.badge-python::before  { background-image: url("icons/python-icon.png"); }
+.badge-js::before      { background-image: url("icons/js-icon.png"); }
+.badge-css::before     { background-image: url("icons/css-icon.png"); }
+.badge-c::before       { background-image: url("icons/c-icon.png"); }
+.badge-R::before       { background-image: url("icons/R-icon.png"); }
+.badge-ts::before      { background-image: url("icons/ts-icon.png"); }
+.badge-html5::before   { background-image: url("icons/html5-icon.png"); }
+.badge-matlab::before  { background-image: url("icons/matlab-icon.png"); }
+.badge-java::before    { background-image: url("icons/java-icon.png"); }
 
-.badge-css::before {
-  background-image: url("icons/css-icon.png");
-}
-
-.badge-c::before {
-  background-image: url("icons/c-icon.png");
-}
-.badge-R::before {
-  background-image: url("icons/R-icon.png");
-}
-
-.badge-ts::before {
-  background-image: url("icons/ts-icon.png");
-}
-
-.badge-html5::before {
-  background-image: url("icons/html5-icon.png");
-}
-.badge-matlab::before {
-  background-image: url("icons/matlab-icon.png");
-}
-
-.badge-java::before {
-  background-image: url("icons/java-icon.png");
-}
-
-
-#badge-container img {
-  height: 3.5rem;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center
-  }
-
-  #badge-wrapper {
-    width: 100%;
-  }
-
-  #badge-text {
-    text-align: center;
-  }
-
-  .badge-slot img {
-  height: 2.5rem;
-}
-
-}
-
+/* Hover effect */
 #badge-container img:hover {
   transform: scale(1.1);
-  filter: brightness(1.2);
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5)) brightness(1.2);
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -160,7 +111,31 @@ header{
   margin-bottom: 8px;
 }
 
+/* === Mobile: horizontal scroll for badges === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  #badge-wrapper {
+    width: 100%;
+  }
+
+  #badge-text {
+    text-align: center;
+  }
+
+  #badge-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .badge-slot img {
+    height: 3.3rem;
+  }
+}
 
 /* === About Section Flex Layout === */
 
@@ -175,7 +150,6 @@ header{
   background-color: #4f57b7;
   padding: 50px 0;
 }
-
 
 .about-container-flex {
   display: flex;
@@ -192,7 +166,7 @@ header{
   max-width: 350px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .about-text {
@@ -206,63 +180,29 @@ header{
   line-height: 1.6;
 }
 
-.about-text h3 {
-  color: Navy;
-}
-
-.about-background {
-  width: 100%;
-  padding: 40px 0;
-}
-
-/* === Paragraph Styling === */
+.about-text h3 { color: Navy; }
 
 p {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(16px, 2vw, 20px);  /* Responsive text sizing */
+  font-size: clamp(16px, 2vw, 20px);
   line-height: 1.6;
   color: Navy;
   text-align: left;
 }
 
-/* Centered and readable text block for About Me and others */
-/* .about-container p {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 12px 16px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-} */
-
-/* === Header and Footer === */
-
 header, footer {
   padding: 20px;
   text-align: center;
-  text-shadow: 2px 2px 5px rgb(172, 186, 245);
+  text-shadow: 2px 2px 5px rgb(172,186,245);
   font-family: 'Poppins', sans-serif;
 }
 
+header h1 { font-size: 55px; }
+header nav { font-size: 38px; }
+footer h2, footer p { font-size: 40px; }
+footer p { text-align: center; }
 
-header h1 {
-  font-size: 55px;
-}
-
-header nav {
-  font-size: 38px;
-}
-
-footer h2, footer p {
-  font-size: 40px;
-}
-
-footer p {
-  text-align: center;
-}
-
-
-
-footer{
+footer {
   margin-top: 50px;
   width: 100vw;
   position: relative;
@@ -274,54 +214,24 @@ footer{
   padding: 50px 0;
 }
 
-
-/* === Section Headings === */
-
 main h3 {
   font-size: 33px;
   text-align: center;
   margin-bottom: 10px;
 }
 
-/* === Hometown Section Background === */
-
-
-.container-hometown-section {
-  padding-top: 20px;
-}
-
+.container-hometown-section { padding-top: 20px; }
 .hometown-section {
-  width: 100vw;              /* Ensures full screen width */
+  width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: rgb(86, 172, 237);
+  background-color: rgb(86,172,237);
 }
 
-.hometown-section p{
-  position: relative;
-  text-align: left;
-  margin: 10px;
-}
+.hometown-section p { position: relative; text-align: left; margin:10px; }
+.hometown-background { width:100%; padding:40px 0; }
 
-
-.hometown-background {
-  width: 100%;
-  padding: 40px 0;
-}
-
-
-/* === Projects List === */
-
-ul.projects {
-  font-size: 40px;
-}
-
-/* === Optional HR Styling === */
-/*
-hr {
-  border: 1px solid rgba(10, 111, 228, 0.856);
-}
-*/
+ul.projects { font-size:40px; }
