@@ -44,7 +44,6 @@ header {
   padding: 10px;
   flex: 0 0 auto;
   width: 100%;
-  max-width: 100%;
 }
 
 #badge-text {
@@ -69,36 +68,33 @@ header {
   flex: 0 0 auto;
 }
 
+/* transparent slot fill with engraved border */
 .badge-slot::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.3;
-  filter: grayscale(100%) blur(1px);
+  background-color: transparent;
+  border: 2px solid rgba(0,0,0,0.5);
+  border-radius: 8px;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.2),
+    inset 0 -2px 4px rgba(0,0,0,0.3);
   z-index: 0;
 }
 
 .badge-slot img {
   position: relative;
   z-index: 1;
-  height: 3.5rem;
-  width: auto;
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
+  display: block;
+  width: 3.5rem;
+  height: auto;
 }
 
-/* Badge slot background images */
-.badge-python::before  { background-image: url("icons/python-icon.png"); }
-.badge-js::before      { background-image: url("icons/js-icon.png"); }
-.badge-css::before     { background-image: url("icons/css-icon.png"); }
-.badge-c::before       { background-image: url("icons/c-icon.png"); }
-.badge-R::before       { background-image: url("icons/R-icon.png"); }
-.badge-ts::before      { background-image: url("icons/ts-icon.png"); }
-.badge-html5::before   { background-image: url("icons/html5-icon.png"); }
-.badge-matlab::before  { background-image: url("icons/matlab-icon.png"); }
-.badge-java::before    { background-image: url("icons/java-icon.png"); }
+/* Shrink TS badge slightly for better fit */
+.badge-slot.badge-ts img {
+  width: 3rem;
+  height: ;
+}
 
 /* Hover effect on badges */
 #badge-container img:hover {
@@ -130,13 +126,13 @@ header {
     -webkit-overflow-scrolling: touch;
   }
 
-  .badge-slot {
-    /* allow slot height to shrink to image */
-  }
-
   .badge-slot img {
     height: 2.5rem;
     width: auto;
+  }
+
+  .badge-slot.badge-ts img {
+    height: 2.2rem;
   }
 }
 
@@ -177,8 +173,14 @@ header {
   max-width: 600px;
 }
 
-.about-text p { font-size: 18px; line-height: 1.6; }
-.about-text h3 { color: Navy; }
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.about-text h3 {
+  color: Navy;
+}
 
 p {
   font-family: 'Inter', sans-serif;
@@ -195,10 +197,22 @@ header, footer {
   font-family: 'Poppins', sans-serif;
 }
 
-header h1 { font-size: 55px; }
-header nav { font-size: 38px; }
-footer h2, footer p { font-size: 40px; }
-footer p { text-align: center; }
+header h1 {
+  font-size: 55px;
+}
+
+header nav {
+  font-size: 38px;
+}
+
+footer h2,
+footer p {
+  font-size: 40px;
+}
+
+footer p {
+  text-align: center;
+}
 
 footer {
   margin-top: 50px;
@@ -212,9 +226,16 @@ footer {
   padding: 50px 0;
 }
 
-main h3 { font-size: 33px; text-align: center; margin-bottom: 10px; }
+main h3 {
+  font-size: 33px;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-.container-hometown-section { padding-top: 20px; }
+.container-hometown-section {
+  padding-top: 20px;
+}
+
 .hometown-section {
   width: 100vw;
   position: relative;
@@ -225,7 +246,17 @@ main h3 { font-size: 33px; text-align: center; margin-bottom: 10px; }
   background-color: rgb(86,172,237);
 }
 
-.hometown-section p { position: relative; text-align: left; margin:10px; }
-.hometown-background { width:100%; padding:40px 0; }
+.hometown-section p {
+  position: relative;
+  text-align: left;
+  margin:10px;
+}
 
-ul.projects { font-size:40px; }
+.hometown-background {
+  width:100%;
+  padding:40px 0;
+}
+
+ul.projects {
+  font-size:40px;
+}
