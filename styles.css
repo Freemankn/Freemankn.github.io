@@ -1,11 +1,4 @@
-/* === Global Styles === */
-
-body {
-  background-color: cornflowerblue;
-  color: Navy;
-}
-
-/* Reset margin/padding and set box model for all elements */
+/* === 1. Global Reset & Defaults === */
 * {
   margin: 0;
   padding: 0;
@@ -16,12 +9,70 @@ html {
   scroll-behavior: smooth;
 }
 
+/* === Default Scrollbar === */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: rgb(69, 71, 204); /* dark blue background */
+}
+
+/* Thumb (scroll handle) */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(36, 160, 243); /* default thumb color */
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Hovered Thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(90, 200, 255); /* lighter blue on hover */
+}
+
+
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* === Layout Container === */
+body {
+  background-color: cornflowerblue;
+  color: Navy;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+/* === 2. Typography === */
+h1 { font-size: 56px; }
+h2 { font-size: 40px; }
+h3 { font-size: 28px; }
+
+header nav {
+  font-size: 38px;
+}
+
+main h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+p {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+  color: Navy;
+  text-align: left;
+}
+
+footer p {
+  font-size: 30px;
+  text-align: center;
+}
+
+/* === 3. Layout Containers === */
 .container {
   width: 100%;
   max-width: 1000px;
@@ -29,15 +80,57 @@ html, body {
   padding: 0 1rem;
 }
 
-/* === Header & Badge Case === */
-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+.section-wrapper {
+  margin-top: 50px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  /* padding-bottom: 50px; */
+  /* padding-bottom: 0px; /* try reducing this */
 }
 
+.section-container h3 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+  padding-left: 40px; /* or whatever you want */
+
+}
+
+/* === 4. Header & Footer === */
+header, footer {
+  padding: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgb(172,186,245);
+  font-family: 'Poppins', sans-serif;
+}
+
+footer {
+  margin-top: 50px;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #4f57b7;
+  padding: 50px 0;
+}
+
+/* === 5. Badge Section === */
 #badge-wrapper {
   background-color: #4656ba;
   border-radius: 25px;
@@ -68,7 +161,6 @@ header {
   flex: 0 0 auto;
 }
 
-/* transparent slot fill with engraved border */
 .badge-slot::before {
   content: "";
   position: absolute;
@@ -90,13 +182,11 @@ header {
   height: auto;
 }
 
-/* Shrink TS badge slightly for better fit */
 .badge-slot.badge-ts img {
   width: 3rem;
-  height: ;
 }
 
-/* Hover effect on badges */
+/* Hover effect */
 #badge-container img:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5)) brightness(1.2);
@@ -104,7 +194,164 @@ header {
   cursor: pointer;
 }
 
-/* === Mobile: horizontal scroll for badges === */
+/* === 6. About Section === */
+.about-section-color {
+  background-color: #8ba7f3;
+}
+
+.about-section-flex img {
+  max-width: 350px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.about-text h3 {
+  color: Navy;
+}
+
+/* === 7. Timeline Section === */
+.timeline {
+  position: relative;
+  margin-left: 40px;
+  padding-left: 20px;
+  border-left: 2px solid #700ee7;
+  margin-bottom: 15px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-top: 60px;
+}
+
+img.timeline-dot {
+  position: absolute;
+  left: -45px;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: rgb(41, 38, 38);
+  box-shadow: 0 0 0 2px #0718cf;
+  z-index: 1;
+}
+
+.timeline-content h4 {
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+
+.timeline-content h5 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: rgb(0, 81, 255);
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.timeline-content ul {
+  padding-left: 40px;
+}
+
+.timeline-content ul li {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.timeline-content ul ul {
+  padding-left: 40px;
+  list-style-type: circle;
+}
+
+/* === 8. Projects Section === */
+.section-container.project-section-color {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 25px;
+  gap: 20px;
+  padding-top: 0px;
+}
+
+.section-container.project-section-color ul {
+  align-self: flex-start;
+  padding-left: 30px;
+  margin-top: -50px;
+}
+
+.project-section-color {
+  background-color: #8ba7f3;
+}
+
+ul.projects {
+  font-size: 40px;
+}
+
+/* === 9. Hometown Section === */
+.container-hometown-section {
+  padding-top: 20px;
+}
+
+.hometown-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: rgb(86,172,237);
+}
+
+.hometown-section p {
+  position: relative;
+  text-align: left;
+  margin: 10px;
+}
+
+.hometown-background {
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* === 10. Images and Annotations === */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image-label {
+  position: absolute;
+  left: 95px;
+  top: 19%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 4px 8px;
+  font-size: 12px;
+  color: Navy;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* === 11. Utilities === */
+::selection {
+  background-color: rgb(61, 168, 240);
+}
+
+/* === 12. Media Queries === */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -134,129 +381,4 @@ header {
   .badge-slot.badge-ts img {
     height: 2.2rem;
   }
-}
-
-/* === About Section Flex Layout === */
-.about-section-wrapper {
-  margin-top: 50px;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: #4f57b7;
-  padding: 50px 0;
-}
-
-.about-container-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-
-.about-container-flex img {
-  max-width: 350px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.about-text {
-  flex: 1;
-  min-width: 300px;
-  max-width: 600px;
-}
-
-.about-text p {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.about-text h3 {
-  color: Navy;
-}
-
-p {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(16px, 2vw, 20px);
-  line-height: 1.6;
-  color: Navy;
-  text-align: left;
-}
-
-header, footer {
-  padding: 20px;
-  text-align: center;
-  text-shadow: 2px 2px 5px rgb(172,186,245);
-  font-family: 'Poppins', sans-serif;
-}
-
-header h1 {
-  font-size: 55px;
-}
-
-header nav {
-  font-size: 38px;
-}
-
-footer h2,
-footer p {
-  font-size: 40px;
-}
-
-footer p {
-  text-align: center;
-}
-
-footer {
-  margin-top: 50px;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: #4f57b7;
-  padding: 50px 0;
-}
-
-main h3 {
-  font-size: 33px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.container-hometown-section {
-  padding-top: 20px;
-}
-
-.hometown-section {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: rgb(86,172,237);
-}
-
-.hometown-section p {
-  position: relative;
-  text-align: left;
-  margin:10px;
-}
-
-.hometown-background {
-  width:100%;
-  padding:40px 0;
-}
-
-ul.projects {
-  font-size:40px;
 }
