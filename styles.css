@@ -213,7 +213,7 @@ footer {
     cursor: pointer;
 }
 
-/* === 6. About Section === */
+/* === 7. About Section === */
 .about-section-color {
   background-color: #8ba7f3;
 }
@@ -240,7 +240,7 @@ footer {
   color: Navy;
 }
 
-/* === 7. Timeline Section === */
+/* === 8. Timeline Section === */
 .timeline {
   position: relative;
   margin-left: 40px;
@@ -297,7 +297,7 @@ img.timeline-dot {
   list-style-type: circle;
 }
 
-/* === 8. Projects Section === */
+/* === 9. Projects Section === */
 .section-container.project-section-color {
   display: flex;
   flex-wrap: wrap;
@@ -322,7 +322,7 @@ ul.projects {
   font-size: 40px;
 }
 
-/* === 9. Hometown Section === */
+/* === 10. Hometown Section === */
 .container-hometown-section {
   padding-top: 20px;
 }
@@ -347,7 +347,7 @@ ul.projects {
   padding: 40px 0;
 }
 
-/* === 10. Images and Annotations === */
+/* === 11. Images and Annotations === */
 .image-wrapper {
   position: relative;
   display: inline-block;
@@ -365,12 +365,44 @@ ul.projects {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* === 11. Utilities === */
+/* === 12. Utilities === */
 ::selection {
   background-color: rgb(61, 168, 240);
 }
 
-/* === 12. Media Queries === */
+/* === 13. Video */
+
+.project-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-video video {
+  /* pick ONE sizing approach; these two lines are enough */
+  width: 65%;        /* consistent relative width */
+  max-width: 75%;  /* optional cap on large screens */
+  height: auto;      /* <-- important: preserve aspect ratio */
+  border-radius: 10px;
+}
+
+/* .project-video {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+}
+
+.project-video video {
+  width: 65%;
+  height: 65%;
+  max-width: 100%;
+  border-radius: 10px;
+} */
+
+
+
+
+/* === 14. Media Queries === */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
