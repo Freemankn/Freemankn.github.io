@@ -1,0 +1,670 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Webpage</title>
+    <!-- Link to external CSS stylesheet -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#mainNavbar"
+    data-bs-offset="120"
+    tabindex="0"
+  >
+    <nav
+      id="mainNavbar"
+      class="navbar navbar-expand-lg navbar-dark fixed-top main-navbar"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="/home.html">
+          FN <span class="brand-divider">|</span>
+          <span class="brand-role">Full-Stack Developer</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#strengths">Strengths</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#timeline">Timeline</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/projects.html">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Header with name and navigation -->
+      <header>
+        <h1>Freeman Nkouka</h1>
+
+        <div id="badge-text">
+          <h5>Click a badge to learn more about my tech stack.</h5>
+        </div>
+
+        <div id="badge-container">
+          <div class="badge-slot badge-transform" data-skill="c">
+            <img src="icons/c-icon.png" alt="C badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="css">
+            <img src="icons/css-icon.png" alt="CSS badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="html">
+            <img src="icons/html5-icon.png" alt="HTML5 badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="java">
+            <img src="icons/java-icon.png" alt="Java badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="javascript">
+            <img src="icons/js-icon.png" alt="JavaScript badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="matlab">
+            <img src="icons/matlab-icon.png" alt="MATLAB badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="python">
+            <img src="icons/python-icon.png" alt="Python badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="r">
+            <img src="icons/R-icon.png" alt="R badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="typescript">
+            <img src="icons/ts-icon3.png" alt="TypeScript badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="figma">
+            <img src="icons/figma-icon.png" alt="Figma badge" />
+          </div>
+
+          <div class="badge-slot badge-transform" data-skill="openai">
+            <img src="icons/OpenAI-icon.png" alt="OpenAI badge" />
+          </div>
+        </div>
+
+        <span class="badge text-bg-info">C</span>
+        <span class="badge text-bg-info">CSS</span>
+        <span class="badge text-bg-info">HTML</span>
+        <span class="badge text-bg-info">Java</span>
+        <span class="badge text-bg-info">JavaScript</span>
+        <span class="badge text-bg-info">MATLAB</span>
+        <span class="badge text-bg-info">Python</span>
+        <span class="badge text-bg-info">R</span>
+        <span class="badge text-bg-info">TypeScript</span>
+        <span class="badge text-bg-info">Figma</span>
+        <span class="badge text-bg-info">ChatGPT</span>
+      </header>
+
+      <main>
+        <!-- About Me Section -->
+        <section class="section-wrapper">
+          <div id="about" class="spy-anchor"></div>
+          <div class="section-container about-section-color about-section-flex">
+            <!-- Profile Image -->
+            <div class="image-wrapper">
+              <img
+                src="/pictures/WorldBank Pic.jpg"
+                alt="Me at the World Bank Event"
+              />
+              <div class="image-label">
+                That’s me at the 2024 World Bank & IMF event↓
+              </div>
+            </div>
+
+            <!-- About Text -->
+            <div class="about-text">
+              <h3>About Me</h3>
+              <p>
+                Hi! My name is Jacob (Freeman) Nkouka, a full-stack developer
+                from Denver, Colorado, passionate about applying software
+                engineering to machine learning and AI. My family is from Togo,
+                a country in West Africa. I also have roots in Ghana and the
+                Republic of Congo (Congo-Brazzaville). That heritage grounds me
+                — it’s a reminder that technology isn’t just about innovation;
+                it’s about building tools that create opportunity, connect
+                people, and solve real problems that matter.
+                <br /><br />
+                I’m a junior at the University of Notre Dame, pursuing a double
+                major in Computer Science and Applied and Computational
+                Mathematics and Statistics (ACMS). I’ve always enjoyed the
+                structure of math and the creativity of programming — and over
+                time, I’ve come to see how the two complement each other in
+                powerful ways.
+                <br /><br />
+                Whether I’m building a task manager, an AI-powered algorithm
+                visualizer, or a productivity tool, I enjoy designing systems
+                that are both practical and thoughtfully engineered.
+                <a href="/projects.html"
+                  >You can explore some of my work on the Projects page.</a
+                >
+                <br /><br />
+                Outside of class, I value collaboration, community, and
+                continuous learning. I believe the best growth comes from
+                building — and I’m always looking for ways to take on new
+                challenges and refine my craft.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Strenghts Section -->
+        <section class="section-wrapper">
+          <div id="strengths" class="spy-anchor"></div>
+          <div class="section-container about-section-color">
+            <h3 class="text-center mb-5">Strengths</h3>
+
+            <div class="container">
+              <div class="row g-4">
+                <!-- Strength 1 -->
+                <div class="col-md-8 col-lg-6 d-flex justify-content-center">
+                  <div class="card shadow-sm h-100">
+                    <div class="card h-100 w-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Technical Communication</h5>
+                        <p class="card-text">
+                          Explaining complex CS and math concepts clearly —
+                          helping others build lasting intuition and confidence.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Strength 2 -->
+                <div class="col-md-8 col-lg-6 d-flex justify-content-center">
+                  <div class="card shadow-sm h-100">
+                    <div class="card h-100 w-100">
+                      <div class="card-body">
+                        <h5 class="card-title">System Design</h5>
+                        <p class="card-text">
+                          Designing thoughtful full-stack systems with attention
+                          to performance, structure, and user experience.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Strength 3 -->
+                <div class="col-md-8 col-lg-6 d-flex justify-content-center">
+                  <div class="card shadow-sm h-100">
+                    <div class="card h-100 w-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Practical Engineering</h5>
+                        <p class="card-text">
+                          Building tools that align with real needs — from
+                          algorithm visualizers to productivity apps.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Strength 4 -->
+                <div class="col-md-8 col-lg-6 d-flex justify-content-center">
+                  <div class="card shadow-sm h-100">
+                    <div class="card h-100 w-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Collaboration</h5>
+                        <p class="card-text">
+                          Collaborating across teams and roles, from tutoring
+                          peers to leading community outreach at events.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Strength 5 -->
+                <div class="col-md-8 col-lg-6 d-flex justify-content-center">
+                  <div class="card shadow-sm h-100">
+                    <div class="card h-100 w-100">
+                      <div class="card-body">
+                        <h5 class="card-title">Abstract Thinking</h5>
+                        <p class="card-text">
+                          Comfortable reverse-engineering complex systems or
+                          theoretical concepts and translating them into
+                          elegant, efficient solutions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="section-wrapper">
+          <div id="timeline" class="spy-anchor"></div>
+          <h3>Timeline</h3>
+          <div class="timeline">
+            <!-- JJL -->
+            <div class="timeline-item">
+              <img src="/icons/JJL.png" alt="JJL" class="timeline-dot" />
+              <div class="timeline-content">
+                <h4>Summer 2025</h4>
+                <h5>
+                  <em>Jehovah Jireh Logistics (JJL)</em> – Network Specialist
+                  Intern
+                </h5>
+                <ul>
+                  <li>
+                    Managed shipper outreach via phone and email, documenting
+                    all communications in an Excel sheet. This served as both a
+                    reference for potential future partnerships and a repository
+                    for follow-up actions.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- NECA -->
+            <div class="timeline-item">
+              <img src="/icons/NECA.png" alt="NECA" class="timeline-dot" />
+              <div class="timeline-content">
+                <h4>Dec 2023–Present</h4>
+                <h5><em>Northeast Early College Alumni</em> – Founder</h5>
+                <ul>
+                  <li>
+                    Created study guides for courses we had taken to help future
+                    students grasp the material more easily, improving
+                    preparedness for challenging topics.
+                  </li>
+                  <li>
+                    Recognized the top three graduating seniors from five career
+                    pathways — Business, Computer Science, Audio Production,
+                    Criminal Justice, and Environmental Science — with
+                    commemorative gifts to honor their achievements.
+                  </li>
+                  <li>
+                    Attended the 2024 and 2025 graduation ceremonies to show
+                    support for the NEC community and recruit new members,
+                    strengthening both alumni engagement and group visibility.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- ND -->
+            <div class="timeline-item">
+              <img src="/icons/ND.png" alt="ND" class="timeline-dot" />
+              <div class="timeline-content">
+                <h4>Aug 2023–May 2027</h4>
+                <h5>
+                  <em>University of Notre Dame</em> – Computer Science & ACMS
+                </h5>
+                <ul>
+                  <li>
+                    I worked as a tutor for the Learning Resource Center (LRC),
+                    providing one-on-one and small-group support in
+                    Pre-Calculus, Calculus I–III & A–B, Linear Algebra, and
+                    Differential Equations.
+                    <ul>
+                      <li>
+                        In addition, I served as a Calculus Huddle Leader,
+                        meeting every Sunday with a group of seven Calculus I
+                        students.
+                      </li>
+                      <li>
+                        Unlike general tutoring sessions, these huddles were
+                        highly personalized — I adapted explanations to each
+                        student’s learning style, offered targeted deep dives
+                        into challenging concepts, and fostered a collaborative
+                        environment where students could learn from both me and
+                        each other.
+                      </li>
+                      <li>
+                        Over time, this approach led to stronger participation
+                        and greater group collaboration.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p><em>Course Overview:</em></p>
+                <ul>
+                  <li>
+                    <details>
+                      <summary>Engineering Computing</summary>
+                      Refreshed core programming habits (syntax, documentation)
+                      and learned data presentation using MATLAB and Python.
+                    </details>
+                  </li>
+                  <li>
+                    <details>
+                      <summary>Fundamentals of Computing</summary>
+                      Introduced modular program design with
+                      headers/implementation files, pointers and memory
+                      management, file input/output, and systematic
+                      debugging/testing in C.
+                      <ul>
+                        <li>
+                          <b>Project:</b> Minature graphing calculator and
+                          crossword puzzle simulator.
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>
+                    <details>
+                      <summary>Data Structures</summary>
+                      Studied core data structures — heaps, linked lists, binary
+                      trees, graphs, and hash tables — in Python and C. Learned
+                      sorting algorithms (quicksort, heapsort) and search
+                      algorithms (Dijkstra’s shortest path), as well as
+                      space/time complexity analysis.
+                    </details>
+                  </li>
+                  <li>
+                    <details>
+                      <summary>Systems Programming</summary>
+                      Gained a deeper understanding of the file system, Bash
+                      commands, automation, C implementations of CLI tools, and
+                      networking fundamentals.
+                      <ul>
+                        <li>
+                          Projects: C-based HTTP Client; IRC Bot in Python.
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>
+                    <details>
+                      <summary>
+                        Statistical Methods & Data Analysis (ACMS)
+                      </summary>
+                      Learned core statistical principles and applied them in R
+                      to PCA, regressions, and time series.
+                      <ul>
+                        <li>
+                          Project: Life Expectancy Modeling submitted to 2024
+                          USPROC competition.
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>
+                    <details>
+                      <summary>Scientific Programming (ACMS)</summary>
+                      Developed skills in data presentation with Pandas,
+                      Matplotlib, Seaborn, machine learning with Scikit-learn,
+                      SQL in Python and R, and time series forecasting.
+                      <ul>
+                        <li>
+                          Project: Credit Card Fraud Analysis with Random Forest
+                          Classifier and confusion matrix.
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- MACM -->
+            <div class="timeline-item">
+              <img src="/icons/MACM.png" alt="MACM" class="timeline-dot" />
+              <div class="timeline-content">
+                <h4>Summers of 2022–2023</h4>
+                <h5><em>Make A Chess Move (MACM)</em> – Game Design Intern</h5>
+                <ul>
+                  <li>
+                    Researched Unreal Engine 5 (UE5) development practices,
+                    learning that effective game development requires
+                    understanding low-level components — such as player movement
+                    properties and animation logic — before scaling to larger
+                    systems.
+                    <ul>
+                      <li>
+                        Applied this approach by starting small and gradually
+                        expanding, resulting in a prototype for a multiplayer
+                        shooter in UE5 with custom UI and weapon logic.
+                      </li>
+                      <li>
+                        Documented the entire process in a detailed Word report,
+                        written in a step-by-step style similar to a YouTube
+                        tutorial.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Earned a Google IT Support Certificate, gaining strategies
+                    for assisting customers through technical issues. Developed
+                    skills in asking clarifying questions to identify root
+                    causes and maintaining patience and professionalism during
+                    support interactions.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- SVL -->
+            <div class="timeline-item">
+              <img src="/icons/SVL.png" alt="SVL" class="timeline-dot" />
+              <div class="timeline-content">
+                <h4>Springs of 2022–2023</h4>
+                <h5><em>Student Voice and Leadership (SVL)</em> – Member</h5>
+                <ul>
+                  <li>
+                    Led a 15-person research team in analyzing student
+                    motivation and counselor access by surveying over 100 NEC
+                    students. Our project for the 2023 Annual 5280 Challenge
+                    explored how communication platforms like Remind influenced
+                    student engagement and access to support.
+                    <ul>
+                      <li>
+                        Discovered that fewer than 50% of 9th–11th graders
+                        regularly used the Remind app for school updates,
+                        compared to 75% of seniors.
+                      </li>
+                      <li>
+                        Found that 49.2% of surveyed students felt confident
+                        relying on their counselors for academic and
+                        post-graduation guidance.
+                      </li>
+                      <li>
+                        Used these insights to propose policy improvements aimed
+                        at strengthening student-counselor relationships and
+                        communication outreach.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    As part of a 10-person team representing NEC, we earned 1st
+                    place at the 2022 Annual 5280 Challenge with a community
+                    safety proposal addressing sexual assault prevention.
+                    <ul>
+                      <li>
+                        Coordinated team efforts by setting internal deadlines
+                        and tracking project progress.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- HETA -->
+            <div class="timeline-item">
+              <img src="/icons/HETA.png" alt="HETA" class="timeline-dot" />
+              <div class="timeline-content">
+                <h4>June 2021–Present</h4>
+                <h5><em>Health Education To All (HETA)</em> – IT Assistant</h5>
+                <ul>
+                  <li>
+                    Represented HETA at the 2024 World Bank Group & IMF Annual
+                    Meeting — as shown in the photo.
+                    <ul>
+                      <li>
+                        Provided input and feedback on a presentation developed
+                        by HETA’s CFO, which he delivered to the Togolese
+                        Secretary to the President, advocating for the
+                        implementation of postal addresses across all parts of
+                        Africa.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Helped run a 2023 STEM outreach booth at the Denver Museum
+                    of Nature and Science, where we encouraged youth interest in
+                    STEM through a Jenga competition and a LEGO diagram-matching
+                    challenge.
+                  </li>
+                  <li>
+                    Participated in HETA’s 2022 “Showing Love to the Community”
+                    Thanksgiving event by donating 50 canned goods to the
+                    Colorado Coalition for the Homeless and the Veterans
+                    Community Living Center.
+                  </li>
+                  <li>
+                    Updated the WIX-based website with new content and upcoming
+                    community events.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- NEC -->
+            <div class="timeline-item">
+              <img src="/icons/NEC.png" alt="NEC" class="timeline-dot" />
+              <div class="timeline-content">
+                <h4>Aug 2020–May 2023</h4>
+                <h5>
+                  <em>Northeast Early College (NEC)</em> – Computer Science
+                  Pathway
+                </h5>
+                <ul>
+                  <li>Graduated as the Salutatorian of NEC.</li>
+                  <li>
+                    Completed dual-enrollment courses at Community College of
+                    Aurora, including College Algebra, Trigonometry, Intro to
+                    Statistics, and Calculus I–III.
+                  </li>
+                  <li>
+                    Chose the Computer Science Pathway, where I began coding in
+                    Python and learned foundational programming concepts like
+                    syntax, documentation, and logic.
+                  </li>
+                  <li>
+                    Took AP Computer Science Principles, gaining exposure to
+                    JavaScript and introductory web development via Code.org.
+                  </li>
+                  <li>
+                    Continued with AP Computer Science A, focusing on
+                    Object-Oriented Programming in Java.
+                    <ul>
+                      <li>
+                        Built a Battleship game simulator project using Merge
+                        Sort to track hits and optimize ship targeting.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Scored 4s on both the AP Computer Science Principles and AP
+                    Computer Science A exams.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Strive Prep Rise -->
+            <div class="timeline-item">
+              <img
+                src="/icons/Rise.png"
+                alt="Strive Prep Rise"
+                class="timeline-dot"
+              />
+              <div class="timeline-content">
+                <h4>Aug 2019–May 2020</h4>
+                <h5>
+                  <em>Strive Prep Rise High School</em> – 9th Grade (Accelerated
+                  Entry)
+                </h5>
+                <ul>
+                  <li>
+                    Skipped from 7th grade at Strive Prep Green Valley Ranch
+                    Middle School directly to 9th grade.
+                  </li>
+                  <li>
+                    Took the Accuplacer test, qualifying me to enroll in College
+                    Algebra while still in high school through dual enrollment.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer Contact Info -->
+      <footer>
+        <h2>Contact</h2>
+        <p>
+          nkouka788@gmail.com | 720-499-7118 |
+          <a href="https://github.com/freemankn"
+            ><i class="bi bi-github"></i
+          ></a>
+          |
+          <a href="https://www.linkedin.com/in/freeman-nkouka/"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="script.js"></script>
+  </body>
+</html>

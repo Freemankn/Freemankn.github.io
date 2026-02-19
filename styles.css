@@ -44,7 +44,10 @@ body {
   color: Navy;
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
+  position: relative;
+  padding-top: 90px; /* keeps content from hiding under fixed navbar */
 }
+
 
 /* === 2. Typography === */
 h1 { font-size: 56px; }
@@ -428,4 +431,88 @@ ul.projects {
     height: 2.5rem;
     width: auto;
   }
+}
+
+
+/* Navbar theme: dark charcoal + subtle gold accent */
+.main-navbar {
+  background-color: #111827;              /* dark charcoal */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* slight shadow */
+}
+
+/* Brand styling */
+.main-navbar .navbar-brand {
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.brand-divider {
+  opacity: 0.6;
+  margin: 0 6px;
+}
+
+.brand-role {
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* Nav links */
+.main-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+
+/* Subtle gold hover accent */
+.main-navbar .nav-link:hover {
+  color: #fbbf24; /* subtle gold */
+}
+
+/* .main-navbar .nav-link.active {
+  color: #fbbf24 !important;
+  border-bottom: 2px solid #fbbf24;
+}
+
+
+.navbar .nav-link.active {
+  color: #fbbf24 !important;   
+  border-bottom: 2px solid #fbbf24;
+} */
+
+
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark card theme */
+.section-container .card {
+  background-color: #0839ad7e;   /* dark charcoal */
+  color: #f3f4f6;              /* soft white text */
+  border: none;
+}
+
+/* Card titles slightly brighter */
+.section-container .card-title {
+  color: #e2dfd6;
+}
+
+/* Hover lift effect */
+.section-container .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-container .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.spy-anchor {
+  position: relative;
+  top: -120px;     /* match your data-bs-offset */
+  height: 0;
 }
