@@ -1,0 +1,15 @@
+{
+  "name": "Freeman Nkouka | AI4SE Researcher",
+  "short_name": "Freeman Nkouka",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050713",
+  "theme_color": "#050713",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

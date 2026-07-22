@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FN monogram">
+  <defs>
+    <linearGradient id="energy" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#61e8ff"/>
+      <stop offset="0.52" stop-color="#4da3ff"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 3 56 12v18c0 14.8-9.7 25.7-24 31C17.7 55.7 8 44.8 8 30V12L32 3Z" fill="#0b1020" stroke="url(#energy)" stroke-width="3"/>
+  <path d="M20 43V21h15v5H26v4h8v5h-8v8h-6Zm17 0V21h5l8 12V21h5v22h-5l-8-12v12h-5Z" fill="#f4f7ff"/>
+</svg>
