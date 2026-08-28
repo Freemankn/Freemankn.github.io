@@ -76,7 +76,7 @@ export const journeyEntries = [
     role: "Game Design Intern",
     categories: ["Industry"],
     summary:
-      "Learned Unreal Engine 5 from low-level movement and animation systems through a working multiplayer-shooter prototype.",
+      "Learned Unreal Engine 5 from low-level movement and animation systems through a multiplayer-shooter prototype.",
     details: [
       "Built a UE5 multiplayer-shooter prototype with custom UI and weapon logic.",
       "Documented the development process in a detailed, tutorial-style Word report.",
@@ -137,7 +137,7 @@ export const journeyEntries = [
     role: "9th Grade (Accelerated Entry)",
     categories: ["Early foundations"],
     summary:
-      "Entered high school two grades early and qualified for dual-enrollment College Algebra.",
+      "Advanced directly from seventh to ninth grade and qualified for dual-enrollment College Algebra.",
     details: [
       "Advanced directly from seventh grade at Strive Prep Green Valley Ranch Middle School to ninth grade.",
       "Qualified through the Accuplacer test to enroll in College Algebra while in high school.",

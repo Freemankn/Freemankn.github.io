@@ -1,79 +1,62 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { FnShield } from "../FnShield/FnShield";
 
 const navigationItems = [
-  { label: "Home", href: "#home", sectionId: "home" },
-  { label: "Focus", href: "#focus", sectionId: "focus" },
-  { label: "Projects", href: "#projects", sectionId: "projects" },
-  { label: "Journey", href: "#journey", sectionId: "journey" },
-  { label: "Contact", href: "#contact", sectionId: "contact" },
+  { label: "Home", path: "/", end: true },
+  { label: "About", path: "/about", end: false },
+  { label: "Focus", path: "/focus", end: false },
+  { label: "Skills", path: "/skills", end: false },
+  { label: "Projects", path: "/projects", end: false },
+  { label: "Journey", path: "/journey", end: false },
+  { label: "Contact", path: "/contact", end: false },
 ] as const;
 
 export function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const sections = navigationItems
-      .map(({ sectionId }) => document.getElementById(sectionId))
-      .filter((section): section is HTMLElement => section !== null);
-    let animationFrame = 0;
-
-    const updateActiveSection = () => {
-      const navigationHeight =
-        document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 76;
-      const marker = window.scrollY + navigationHeight + window.innerHeight * 0.35;
-      const currentSection = sections.reduce(
-        (current, section) => (section.offsetTop <= marker ? section : current),
-        sections[0],
-      );
-      if (currentSection) {
-        setActiveSection(currentSection.id);
-      }
-      animationFrame = 0;
-    };
-
-    const queueUpdate = () => {
-      if (!animationFrame) {
-        animationFrame = window.requestAnimationFrame(updateActiveSection);
-      }
-    };
-
-    updateActiveSection();
-    window.addEventListener("scroll", queueUpdate, { passive: true });
-    window.addEventListener("resize", queueUpdate);
-    window.addEventListener("hashchange", queueUpdate);
-    return () => {
-      window.removeEventListener("scroll", queueUpdate);
-      window.removeEventListener("resize", queueUpdate);
-      window.removeEventListener("hashchange", queueUpdate);
-      window.cancelAnimationFrame(animationFrame);
-    };
-  }, []);
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+        window.requestAnimationFrame(() => toggleRef.current?.focus());
+      }
+    };
+    const closeAtDesktopWidth = () => {
+      if (window.matchMedia("(min-width: 821px)").matches) {
         setMenuOpen(false);
       }
     };
 
     window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
-  }, []);
-
-  const closeMenu = () => setMenuOpen(false);
+    window.addEventListener("resize", closeAtDesktopWidth);
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      window.removeEventListener("resize", closeAtDesktopWidth);
+    };
+  }, [menuOpen]);
 
   return (
     <header className="site-header">
       <nav className="navigation shell" aria-label="Primary navigation">
-        <a className="brand" href="#home" onClick={closeMenu} aria-label="Freeman Nkouka, home">
-          <span className="brand__mark" aria-hidden="true">
-            FN
-          </span>
+        <Link
+          className="brand"
+          to="/"
+          aria-label="Freeman Nkouka — Home"
+          onClick={() => setMenuOpen(false)}
+        >
+          <FnShield />
           <span className="brand__label">AI4SE Researcher</span>
-        </a>
+        </Link>
 
         <button
+          ref={toggleRef}
           className="menu-toggle"
           type="button"
           aria-expanded={menuOpen}
@@ -90,19 +73,23 @@ export function Navigation() {
           id="primary-navigation"
           className={`navigation__links${menuOpen ? " navigation__links--open" : ""}`}
         >
-          {navigationItems.map(({ label, href, sectionId }) => (
-            <li key={sectionId}>
-              <a
-                className={activeSection === sectionId ? "is-active" : undefined}
-                href={href}
-                aria-current={activeSection === sectionId ? "location" : undefined}
-                onClick={() => {
-                  setActiveSection(sectionId);
-                  closeMenu();
-                }}
+          {navigationItems.map(({ label, path, end }) => (
+            <li key={path}>
+              <NavLink
+                className={({ isActive }) =>
+                  [
+                    isActive ? "is-active" : "",
+                    label === "Contact" ? "navigation__contact-link" : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")
+                }
+                end={end}
+                to={path}
+                onClick={() => setMenuOpen(false)}
               >
                 {label}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>

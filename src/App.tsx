@@ -1,17 +1,14 @@
-import { BeyondEngineering } from "./components/BeyondEngineering/BeyondEngineering";
-import { ContactSection } from "./components/ContactSection/ContactSection";
-import { FocusCard } from "./components/FocusCard/FocusCard";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Footer } from "./components/Footer/Footer";
-import { JourneyTimeline } from "./components/JourneyTimeline/JourneyTimeline";
-import { KnightHero } from "./components/KnightHero/KnightHero";
 import { Navigation } from "./components/Navigation/Navigation";
-import { ProjectCard } from "./components/ProjectCard/ProjectCard";
-import { ResearchPhilosophy } from "./components/ResearchPhilosophy/ResearchPhilosophy";
-import { SectionHeading } from "./components/SectionHeading/SectionHeading";
-import { contactDetails } from "./data/contact";
-import { focusItems } from "./data/focus";
-import { journeyEntries } from "./data/journey";
-import { archivedProjects, featuredProjects } from "./data/projects";
+import { RouteEffects } from "./components/RouteEffects/RouteEffects";
+import { AboutPage } from "./pages/AboutPage";
+import { ContactPage } from "./pages/ContactPage";
+import { FocusPage } from "./pages/FocusPage";
+import { HomePage } from "./pages/HomePage";
+import { JourneyPage } from "./pages/JourneyPage";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import { SkillsPage } from "./pages/SkillsPage";
 
 function ArchitectureBackground() {
   return (
@@ -34,6 +31,8 @@ function ArchitectureBackground() {
 }
 
 function App() {
+  const location = useLocation();
+
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -41,73 +40,21 @@ function App() {
       </a>
       <ArchitectureBackground />
       <Navigation />
+      <RouteEffects />
 
       <main id="main-content">
-        <KnightHero />
-
-        <section className="focus section" id="focus" aria-labelledby="focus-title">
-          <div className="shell">
-            <SectionHeading
-              eyebrow="Current focus"
-              title="Research questions becoming working systems."
-              description="Three connected areas shape my current work: reliable AI interaction, measurable software architecture, and tools that help people act with intention."
-            />
-            <div className="focus-grid">
-              {focusItems.map((item, index) => (
-                <FocusCard item={item} index={index} key={item.id} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="projects section" id="projects" aria-labelledby="projects-title">
-          <div className="shell">
-            <SectionHeading
-              eyebrow="Featured projects"
-              title="Tools for understanding, controlling, and building software."
-              description="Selected research and engineering work, organized around the problem each system is designed to solve."
-            />
-            <div className="projects-grid projects-grid--featured">
-              {featuredProjects.map((project, index) => (
-                <ProjectCard project={project} index={index} key={project.id} />
-              ))}
-            </div>
-
-            <div className="project-archive">
-              <div className="project-archive__heading">
-                <p className="eyebrow">Project archive</p>
-                <h3>Earlier builds and experiments</h3>
-                <p>Open a card to inspect the contribution, technology stack, and original demo.</p>
-              </div>
-              <div className="projects-grid projects-grid--archive">
-                {archivedProjects.map((project, index) => (
-                  <ProjectCard
-                    project={project}
-                    variant="archive"
-                    index={index}
-                    key={project.id}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <ResearchPhilosophy />
-
-        <section className="journey section" id="journey" aria-labelledby="journey-title">
-          <div className="shell">
-            <SectionHeading
-              eyebrow="Journey"
-              title="A path shaped by research, teaching, and community."
-              description="A compressed record of the environments that shaped how I learn, explain, and build."
-            />
-            <JourneyTimeline entries={journeyEntries} />
-          </div>
-        </section>
-
-        <BeyondEngineering />
-        <ContactSection details={contactDetails} />
+        <div className="route-view" key={location.pathname}>
+          <Routes location={location}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/focus" element={<FocusPage />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/journey" element={<JourneyPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
       </main>
 
       <Footer />

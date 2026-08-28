@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#050713" />
+    <title>Redirecting | Freeman Nkouka</title>
+    <script>
+      (() => {
+        const route = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+        try {
+          window.sessionStorage.setItem("portfolio:route-redirect", route);
+        } catch {
+          // The primary route entry files do not depend on session storage.
+        }
+        window.location.replace("/");
+      })();
+    </script>
+  </head>
+  <body>
+    <p><a href="/">Continue to Freeman Nkouka's portfolio.</a></p>
+  </body>
+</html>

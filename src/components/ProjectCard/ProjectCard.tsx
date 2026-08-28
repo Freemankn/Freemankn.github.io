@@ -4,12 +4,6 @@ import type { Project } from "../../data/projects";
 function ProjectDiagram({ projectId }: { projectId: string }) {
   return (
     <svg className="project-diagram" viewBox="0 0 520 190" aria-hidden="true">
-      <defs>
-        <linearGradient id={`line-${projectId}`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#61e8ff" />
-          <stop offset="1" stopColor="#8b5cf6" />
-        </linearGradient>
-      </defs>
       <path d="M35 128 126 57l84 47 96-65 88 68 91-43" />
       <path d="M126 57v80l84-33 96 42 88-39" />
       {["35,128", "126,57", "126,137", "210,104", "306,39", "306,146", "394,107", "485,64"].map(
@@ -27,18 +21,19 @@ function ProjectDiagram({ projectId }: { projectId: string }) {
 interface ProjectCardProps {
   project: Project;
   variant?: "featured" | "archive";
-  index: number;
 }
 
-export function ProjectCard({ project, variant = "featured", index }: ProjectCardProps) {
+export function ProjectCard({ project, variant = "featured" }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false);
   const detailsId = `${project.id}-details`;
+  const titleId = `${project.id}-title`;
 
   return (
     <article
       className={`project-card project-card--${variant}`}
       id={`project-${project.id}`}
-      style={{ "--project-index": index } as React.CSSProperties}
+      tabIndex={-1}
+      aria-labelledby={titleId}
     >
       <div className="project-card__visual">
         <ProjectDiagram projectId={project.id} />
@@ -50,7 +45,7 @@ export function ProjectCard({ project, variant = "featured", index }: ProjectCar
 
       <div className="project-card__body">
         <p className="project-card__category">{project.category}</p>
-        <h3>{project.title}</h3>
+        <h2 id={titleId}>{project.title}</h2>
         <p className="project-card__problem">
           <span>Problem</span>
           {project.problem}
@@ -92,7 +87,11 @@ export function ProjectCard({ project, variant = "featured", index }: ProjectCar
           ) : null}
         </div>
 
-        <div className={`project-details${expanded ? " project-details--open" : ""}`} id={detailsId}>
+        <div
+          className={`project-details${expanded ? " project-details--open" : ""}`}
+          id={detailsId}
+          hidden={!expanded}
+        >
           <div className="project-details__inner">
             <div>
               <p className="detail-label">My contribution</p>

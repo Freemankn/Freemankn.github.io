@@ -1,0 +1,90 @@
+.page {
+  isolation: isolate;
+}
+
+.orbitSection {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(77, 163, 255, 0.09), transparent 27rem),
+    linear-gradient(180deg, rgba(11, 16, 32, 0.58), transparent);
+}
+
+.page .orbitSection {
+  padding-top: var(--page-padding-block);
+}
+
+.page .contextSection {
+  padding-top: var(--page-padding-block);
+}
+
+.contextHeading {
+  display: grid;
+  align-items: end;
+  gap: 1rem 3rem;
+  margin-bottom: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.75fr);
+}
+
+.contextEyebrow {
+  grid-column: 1 / -1;
+}
+
+.contextHeading h2 {
+  max-width: 18ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.13;
+}
+
+.contextHeading > p:last-child {
+  color: var(--text-muted);
+}
+
+.contextGrid {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--border-subtle);
+  background: var(--border-subtle);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contextGrid article {
+  min-height: 11rem;
+  padding: var(--card-padding);
+  background: linear-gradient(145deg, rgba(16, 24, 45, 0.96), rgba(8, 12, 27, 0.96));
+}
+
+.contextGrid article > span {
+  color: var(--electric-blue);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+}
+
+.contextGrid h3 {
+  margin-top: 1.15rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  font-weight: 600;
+}
+
+.contextGrid p {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.68;
+}
+
+@media (max-width: 720px) {
+  .contextHeading,
+  .contextGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contextEyebrow {
+    grid-column: auto;
+  }
+
+  .contextGrid article {
+    min-height: auto;
+  }
+}

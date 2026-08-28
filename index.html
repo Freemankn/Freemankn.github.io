@@ -10,6 +10,20 @@
     <meta name="theme-color" content="#050713" />
     <meta name="color-scheme" content="dark" />
 
+    <script>
+      (() => {
+        try {
+          const redirect = window.sessionStorage.getItem("portfolio:route-redirect");
+          if (redirect) {
+            window.sessionStorage.removeItem("portfolio:route-redirect");
+            window.history.replaceState(null, "", redirect);
+          }
+        } catch {
+          // Route entry files still cover the seven primary pages when storage is unavailable.
+        }
+      })();
+    </script>
+
     <meta property="og:type" content="website" />
     <meta
       property="og:title"

@@ -1,0 +1,55 @@
+.card {
+  min-height: 0;
+}
+
+.details {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0.9rem 0 0;
+}
+
+.details > div {
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.details dt {
+  color: var(--text-subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.details dd {
+  margin: 0.35rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.52;
+}
+
+.footer {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer > a {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.projectLabel {
+  width: 100%;
+  color: var(--text-subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 640px) {
+  .footer > a {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}

@@ -25,13 +25,26 @@ function ContactIcon({ id }: { id: ContactLinkId }) {
   );
 }
 
-export function ContactSection({ details }: { details: ContactDetails }) {
+interface ContactSectionProps {
+  readonly details: ContactDetails;
+  readonly headingLevel?: 1 | 2;
+}
+
+export function ContactSection({ details, headingLevel = 2 }: ContactSectionProps) {
+  const Heading = headingLevel === 1 ? "h1" : "h2";
+
   return (
     <section className="contact section" id="contact" aria-labelledby="contact-title">
       <div className="contact__panel shell">
         <div className="contact__heading">
           <p className="eyebrow">Open channel</p>
-          <h2 id="contact-title">Let’s build something that matters.</h2>
+          <Heading
+            id="contact-title"
+            data-route-heading={headingLevel === 1 ? true : undefined}
+            tabIndex={headingLevel === 1 ? -1 : undefined}
+          >
+            Let’s build something that matters.
+          </Heading>
           <p>
             I’m interested in research, engineering, and collaborations that make ambitious
             software more understandable and reliable.
