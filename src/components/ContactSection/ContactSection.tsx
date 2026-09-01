@@ -37,25 +37,20 @@ export function ContactSection({ details, headingLevel = 2 }: ContactSectionProp
     <section className="contact section" id="contact" aria-labelledby="contact-title">
       <div className="contact__panel shell">
         <div className="contact__heading">
-          <p className="eyebrow">Open channel</p>
           <Heading
             id="contact-title"
             data-route-heading={headingLevel === 1 ? true : undefined}
             tabIndex={headingLevel === 1 ? -1 : undefined}
           >
-            Let’s build something that matters.
+            LET&apos;S BUILD SOMETHING THAT MATTERS.
           </Heading>
-          <p>
-            I’m interested in research, engineering, and collaborations that make ambitious
-            software more understandable and reliable.
-          </p>
           <a className="contact__email" href={`mailto:${details.email}`}>
             {details.email} <span aria-hidden="true">↗</span>
           </a>
         </div>
 
         <div className="contact__links" aria-label="Contact links">
-          {details.links.map((link) => (
+          {details.links.filter((link) => link.id !== "email").map((link) => (
             <a
               key={link.id}
               href={link.href}
@@ -78,6 +73,17 @@ export function ContactSection({ details, headingLevel = 2 }: ContactSectionProp
               aria-label="Open Freeman Nkouka's résumé"
             >
               <span>Résumé</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          ) : null}
+          {details.academicCvUrl ? (
+            <a
+              href={details.academicCvUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Open Freeman Nkouka's academic CV"
+            >
+              <span>Academic CV</span>
               <span aria-hidden="true">↗</span>
             </a>
           ) : null}

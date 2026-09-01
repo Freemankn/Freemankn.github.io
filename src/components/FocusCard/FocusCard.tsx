@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { FocusIcon as FocusIconName, FocusItem } from "../../data/focus";
 import styles from "./FocusCard.module.css";
@@ -62,7 +63,9 @@ function FocusIcon({ icon }: { icon: FocusIconName }) {
 }
 
 export function FocusCard({ item, index }: { item: FocusItem; index: number }) {
+  const [expanded, setExpanded] = useState(false);
   const titleId = `focus-${item.id}-title`;
+  const contextId = `focus-${item.id}-context`;
 
   return (
     <article className={`focus-card ${styles.card}`} aria-labelledby={titleId}>
@@ -81,14 +84,24 @@ export function FocusCard({ item, index }: { item: FocusItem; index: number }) {
           <dd>{item.problem}</dd>
         </div>
         <div>
-          <dt>Why it matters</dt>
-          <dd>{item.whyItMatters}</dd>
-        </div>
-        <div>
           <dt>Current approach</dt>
           <dd>{item.currentApproach}</dd>
         </div>
       </dl>
+
+      <button
+        className={styles.disclosure}
+        type="button"
+        aria-expanded={expanded}
+        aria-controls={contextId}
+        onClick={() => setExpanded((current) => !current)}
+      >
+        {expanded ? "Hide context" : "Why it matters"}
+        <span aria-hidden="true">{expanded ? "−" : "+"}</span>
+      </button>
+      <div className={styles.more} id={contextId} hidden={!expanded}>
+        <p>{item.whyItMatters}</p>
+      </div>
 
       <div className={`focus-card__footer ${styles.footer}`}>
         <span className="focus-card__status">

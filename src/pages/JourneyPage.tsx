@@ -1,6 +1,6 @@
 import { JourneyConstellation } from "../components/JourneyConstellation/JourneyConstellation";
 import { PageIntro } from "../components/PageIntro/PageIntro";
-import { journeyMapNodes } from "../data/journeyMap";
+import { journeyChapters } from "../data/journey";
 
 export function JourneyPage() {
   return (
@@ -10,8 +10,8 @@ export function JourneyPage() {
           id="journey-page-title"
           eyebrow="Journey constellation"
           title="A connected path from early foundations to an AI4SE direction."
-          description="Explore Freeman's education, research, teaching, community, and industry milestones as one chronological system. Select any point for the existing record behind it."
-          signal={`${journeyMapNodes.length} connected milestones`}
+          description="Explore seven major chapters in Freeman's development. Open a chapter to discover the milestones that shaped each stage of the journey."
+          signal={`${journeyChapters.length} major chapters`}
         />
       </section>
 

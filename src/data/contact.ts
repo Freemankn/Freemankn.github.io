@@ -12,6 +12,7 @@ export interface ContactDetails {
   readonly email: string;
   readonly links: readonly ContactLink[];
   readonly resumeUrl?: string;
+  readonly academicCvUrl?: string;
 }
 
 export const contactDetails: ContactDetails = {

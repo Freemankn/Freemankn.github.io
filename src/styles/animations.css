@@ -342,8 +342,6 @@
   .portrait-orbit,
   .status-pulse,
   .project-diagram path,
-  .technology-orbit__ring,
-  .technology-orbit__button,
   .route-view {
     animation: none !important;
   }

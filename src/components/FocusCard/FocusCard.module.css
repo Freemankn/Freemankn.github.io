@@ -29,6 +29,42 @@
   line-height: 1.52;
 }
 
+.disclosure {
+  display: flex;
+  width: 100%;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding: 0.55rem 0;
+  border: 0;
+  border-top: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--silver);
+  cursor: pointer;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.disclosure:hover,
+.disclosure:focus-visible {
+  color: var(--cyan-energy);
+}
+
+.more {
+  padding: 0.2rem 0 0.8rem;
+}
+
+.more p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
 .footer {
   border-top: 1px solid var(--border-subtle);
 }

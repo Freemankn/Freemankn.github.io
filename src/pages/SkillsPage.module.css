@@ -1,90 +1,40 @@
 .page {
+  min-height: 100svh;
   isolation: isolate;
 }
 
-.orbitSection {
-  background:
-    radial-gradient(circle at 18% 12%, rgba(77, 163, 255, 0.09), transparent 27rem),
-    linear-gradient(180deg, rgba(11, 16, 32, 0.58), transparent);
-}
-
-.page .orbitSection {
-  padding-top: var(--page-padding-block);
-}
-
-.page .contextSection {
-  padding-top: var(--page-padding-block);
-}
-
-.contextHeading {
+.intro {
   display: grid;
-  align-items: end;
-  gap: 1rem 3rem;
-  margin-bottom: 1.5rem;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.75fr);
+  padding-top: calc(var(--nav-height) + clamp(1.3rem, 2.5vw, 2.2rem));
+  padding-bottom: clamp(1rem, 1.8vw, 1.5rem);
 }
 
-.contextEyebrow {
-  grid-column: 1 / -1;
-}
-
-.contextHeading h2 {
-  max-width: 18ch;
+.intro h1 {
+  margin-top: 0.5rem;
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  font-size: clamp(2.25rem, 5vw, 4.6rem);
   font-weight: 600;
-  line-height: 1.13;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
 }
 
-.contextHeading > p:last-child {
+.intro > p:last-child {
+  margin-top: 0.55rem;
   color: var(--text-muted);
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
 }
 
-.contextGrid {
-  display: grid;
-  gap: 1px;
-  border: 1px solid var(--border-subtle);
-  background: var(--border-subtle);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.galaxy {
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-.contextGrid article {
-  min-height: 11rem;
-  padding: var(--card-padding);
-  background: linear-gradient(145deg, rgba(16, 24, 45, 0.96), rgba(8, 12, 27, 0.96));
-}
-
-.contextGrid article > span {
-  color: var(--electric-blue);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-}
-
-.contextGrid h3 {
-  margin-top: 1.15rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.7rem);
-  font-weight: 600;
-}
-
-.contextGrid p {
-  margin-top: 0.75rem;
-  color: var(--text-muted);
-  line-height: 1.68;
-}
-
-@media (max-width: 720px) {
-  .contextHeading,
-  .contextGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 820px) {
+  .intro {
+    padding-top: calc(var(--nav-height) + 1.15rem);
+    padding-bottom: 0.9rem;
   }
 
-  .contextEyebrow {
-    grid-column: auto;
-  }
-
-  .contextGrid article {
-    min-height: auto;
+  .intro h1 {
+    font-size: clamp(2rem, 10vw, 3.2rem);
   }
 }

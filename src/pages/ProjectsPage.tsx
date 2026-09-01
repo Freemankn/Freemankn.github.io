@@ -28,10 +28,9 @@ export function ProjectsPage() {
       <section className="page-hero shell" aria-labelledby="projects-page-title">
         <PageIntro
           id="projects-page-title"
-          eyebrow="Selected systems"
-          title="Projects built around a problem worth understanding."
-          description="Research systems, developer tools, and interactive products—organized around the problem each build is designed to solve and the contribution I made."
-          signal={`${projects.length} documented projects`}
+          eyebrow="Projects"
+          title="Systems built around problems worth understanding."
+          description="Research systems, developer tools, and interactive products—each with a clear purpose and an inspectable implementation story."
         />
       </section>
 

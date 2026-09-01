@@ -46,11 +46,15 @@ export function ProjectCard({ project, variant = "featured" }: ProjectCardProps)
       <div className="project-card__body">
         <p className="project-card__category">{project.category}</p>
         <h2 id={titleId}>{project.title}</h2>
-        <p className="project-card__problem">
-          <span>Problem</span>
-          {project.problem}
-        </p>
         <p className="project-card__description">{project.description}</p>
+        <div className="project-card__summary-technologies">
+          <p className="detail-label">Technologies</p>
+          <ul className="technology-list" aria-label={`${project.title} technologies`}>
+            {project.technologies.map((technology) => (
+              <li key={technology}>{technology}</li>
+            ))}
+          </ul>
+        </div>
 
         <div className="project-card__actions">
           <button
@@ -60,7 +64,7 @@ export function ProjectCard({ project, variant = "featured" }: ProjectCardProps)
             aria-controls={detailsId}
             onClick={() => setExpanded((isExpanded) => !isExpanded)}
           >
-            {expanded ? "Close details" : "Inspect project"}
+            {expanded ? "Hide details" : "View details"}
             <span aria-hidden="true">{expanded ? "−" : "+"}</span>
           </button>
           {project.repositoryUrl ? (
@@ -94,16 +98,12 @@ export function ProjectCard({ project, variant = "featured" }: ProjectCardProps)
         >
           <div className="project-details__inner">
             <div>
-              <p className="detail-label">My contribution</p>
-              <p>{project.contribution}</p>
+              <p className="detail-label">Problem</p>
+              <p>{project.problem}</p>
             </div>
             <div>
-              <p className="detail-label">Technologies</p>
-              <ul className="technology-list" aria-label={`${project.title} technologies`}>
-                {project.technologies.map((technology) => (
-                  <li key={technology}>{technology}</li>
-                ))}
-              </ul>
+              <p className="detail-label">My contribution</p>
+              <p>{project.contribution}</p>
             </div>
             {expanded && project.media?.kind === "video" ? (
               <div className="project-media">
